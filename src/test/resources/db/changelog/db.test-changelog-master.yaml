@@ -1,0 +1,30 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1
+      author: Liquibase
+      changes:
+        - createTable:
+            tableName: transaction
+            columns:
+              - column:
+                  name: id
+                  type: INT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: customer_id
+                  type: INT
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_date
+                  type: DATETIME
+                  constraints:
+                    nullable: false
+              - column:
+                  name: transaction_value
+                  type: DECIMAL(20,2)
+                  constraints:
+                    nullable: false
